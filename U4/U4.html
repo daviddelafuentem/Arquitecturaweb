@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unidad 4: Aspectos básicos de la computación paralela</title>
+  <link rel="stylesheet" href="U4.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <img src="../U4/IMAGENES U4/tec logo.png" alt="Logo">
+      <ul>
+        <li><a href="../Menu/Menu.html">Inicio</a></li>
+        <li><a href="../U1/U1.html">Unidad 1</a></li>
+        <li><a href="../U2/U2.html">Unidad 2</a></li>
+        <li><a href="../U3/U3.html">Unidad 3</a></li>
+        <li><a href="U4.html">Unidad 4</a></li>
+        <li><a href="../PRACTICAS/practicas.html">Practicas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    <aside class="sidebar">
+      <h2 onclick="toggleMenu()">Unidad 4: Aspectos básicos de la computación paralela</h2>
+      <ul id="sidebar-menu" class="collapsed">
+        <li><a href="#AP">4.1 Aspectos básicos de la computación paralela</a></li>
+        <li><a href="#TC">4.2 Tipos de computación paralela</a></li>
+        <li><a href="#C">4.2.1 Clasificacion</a></li>
+        <li><a href="#A">4.2.2 Arquitectura de computadores secuenciales</a></li>
+        <li><a href="#O">4.2.3 Organización de direcciones de memoria</a></li>
+        <li><a href="#SC">4.3 Sistema de memoria compartida</a></li>
+        <li><a href="#RMC">4.3.1 Redes de medio compartida</a></li>
+        <li><a href="#RC">4.3.2 Redes conmutadas</a></li>
+        <li><a href="#SMC">4.4 Sistemas de memoria construida</a></li>
+        <li><a href="#CE">4.5 Casos de estudio</a></li>
+      </ul>
+    </aside>
+
+    <section class="content">
+      <h1>Unidad 4: Aspectos básicos de la computación paralela</h1>
+
+     <!-- temas -->
+     <article id="AP">
+        <h2>4.1 Aspectos básicos de la computación paralela</h2>
+        <img src="../U4/IMAGENES U4/tema1.jpg" alt="OP">
+        <p>
+            La computación paralela es una técnica en la que múltiples procesadores realizan operaciones simultáneamente para resolver problemas complejos más rápidamente que un solo procesador. 
+            Este enfoque es crucial en la era moderna para manejar grandes cantidades de datos y realizar cálculos intensivos de manera eficiente.
+        </p>
+        <h3>Principios Fundamentales</h3>
+        <p>
+            <li>División del Trabajo: Las tareas se dividen en sub-tareas más pequeñas que se ejecutan en paralelo.</li>
+            <li>Sincronización: Los procesadores deben coordinarse para asegurar que las sub-tareas se completen correctamente y en el orden adecuado.</li>
+            <li>Comunicación: Los procesadores deben intercambiar información, lo cual puede realizarse mediante memoria compartida o mensajes.</li>
+        </p>
+        <h3>Ventajas</h3>
+        <li>Aumento del Rendimiento: Al dividir tareas, los sistemas paralelos pueden realizar cálculos más rápidos y manejar mayores cargas de trabajo.</li>
+        <li>Escalabilidad: Los sistemas pueden escalar añadiendo más procesadores, mejorando así el rendimiento general.</li>
+      </article>
+      <article id="TC">
+        <h2>4.2 Tipos de computación paralela</h2>
+        <img src="../U4/IMAGENES U4/tema2.png" alt="OP">
+        <p>
+            Existen varios tipos de computación paralela que se utilizan en diferentes contextos y escenarios. Algunos de los enfoques más comunes incluyen el procesamiento paralelo a nivel de bit, a nivel de instrucción, a nivel de datos y a nivel de tarea. Estos enfoques se diferencian en cómo se dividen y procesan las tareas y los datos.
+        </p>
+      </article>
+      <article id="C">
+        <h2>4.2.1 Clasificacion</h2>
+        <p>
+        La clasificación de la computación paralela puede realizarse en función de la forma en que se dividen las tareas y los datos, así como de la forma en que se coordinan y comunican los procesos paralelos. 
+        Algunas clasificaciones comunes incluyen la computación paralela a nivel de bit, a nivel de instrucción, a nivel de datos y a nivel de tarea.
+        </p>
+        <h3>Clasificación según Flynn:</h3>
+        <h4><li>SISD (Single Instruction, Single Data): </li></h4>
+        <p>
+            Un solo procesador ejecuta una única instrucción en un único dato.
+        </p>
+        <h4><li>SIMD (Single Instruction, Multiple Data):</li></h4>
+        <p>
+            Un solo procesador ejecuta una única instrucción en múltiples datos simultáneamente, común en GPUs.
+        </p>
+        <h4><li>MISD (Multiple Instruction, Single Data):</li></h4>
+        <p>
+            Múltiples procesadores ejecutan diferentes instrucciones en un único dato (poco común).
+        </p>
+        <h4><li>MIMD (Multiple Instruction, Multiple Data): </li></h4>
+        <p>
+            Múltiples procesadores ejecutan diferentes instrucciones en diferentes datos, típico en sistemas multiprocesadores.
+        </p>
+      </article>
+      <article id="A">
+        <h2>4.2.2 Arquitectura de computadores secuenciales</h2>
+        <img src="../U4/IMAGENES U4/tema4.JPG" alt="OP">
+        <p>
+            En contraste con la computación paralela, la arquitectura de computadores secuenciales se basa en un único procesador que ejecuta una instrucción a la vez. 
+            Este enfoque es más simple y adecuado para tareas lineales y menos complejas, pero es limitado en rendimiento comparado con la computación paralela.
+        </p>
+        <h3>Características:</h3>
+        <p>
+            <h4><li>Ciclo de Instrucción:</li></h4>
+            <p>Fetch, decode, execute y store.</p>
+            <h4><li>Pipeline:</li></h4>
+            <p>Aumenta la eficiencia al dividir el ciclo de instrucción en etapas que se ejecutan en paralelo dentro de un único procesador.</p>
+            <h4><li>Caches: </li></h4>
+            <p>Memorias rápidas que reducen el tiempo de acceso a datos frecuentemente utilizados.</p>
+        </p>
+      </article>
+      <article id="O">
+        <h2>4.2.3 Organización de direcciones de memoria</h2>
+        <img src="../U4/IMAGENES U4/tema5.webp" alt="OP">
+        <p>
+            La organización de direcciones de memoria es crucial para la eficiencia de un sistema. Define cómo las direcciones de memoria son asignadas y accedidas.
+            La organización de direcciones de memoria se refiere a cómo se asignan y acceden a las direcciones de memoria en un sistema de computación paralela. Esto incluye consideraciones como la memoria compartida, 
+            la memoria distribuida y las técnicas de direccionamiento utilizadas para acceder a los datos en paralelo.
+        </p>
+        <h3>Modos de Direccionamiento:</h3>
+        <p>
+            <h4><li>Directo:</li></h4>
+            <p>La dirección de la memoria es especificada directamente.</p>
+            <h4><li>Indirecto:</li></h4>
+            <p> La dirección contenida en un registro o memoria es usada como la dirección real.</p>
+            <h4><li>Indexado: </li></h4>
+            <p>Se utiliza un índice para calcular la dirección final.</p>
+            <h4><li>Segmentado:</li></h4> 
+            <p>Memoria dividida en segmentos para facilitar la gestión y protección de memoria.</p>
+        </p>
+      </article>
+      <article id="SC">
+        <h2>4.3 Sistema de memoria compartida</h2>
+        <img src="../U4/IMAGENES U4/tema6.png" alt="OP">
+        <p>
+            En sistemas de memoria compartida, múltiples procesadores comparten una única memoria principal, lo que facilita la comunicación y sincronización de datos.
+        </p>
+        <p>
+            Los sistemas de memoria compartida son un enfoque de computación paralela en el que múltiples procesadores acceden a una misma área de memoria compartida. Esto permite a los procesadores compartir datos y comunicarse de manera eficiente. Dentro de los sistemas de memoria compartida, existen dos tipos principales de redes: las redes de medio compartida y las redes conmutadas.
+        </p>
+      </article>
+      <article id="RMC">
+        <h2>4.3.1 Redes de medio compartida</h2>
+        <img src="../U4/IMAGENES U4/tema7.jpg" alt="OP">
+        <p>
+            En redes de medio compartido, todos los procesadores y dispositivos comparten el mismo medio de comunicación (como un bus).
+        </p>
+        <p>
+            Las redes de medio compartida son un tipo de arquitectura de memoria compartida en la que los procesadores se conectan físicamente a un bus compartido o a una red de interconexión. 
+            Los procesadores pueden leer y escribir en la memoria compartida a través de este medio compartido.
+        </p>
+      </article>
+      <article id="RC">
+        <h2>4.3.2 Redes conmutadas</h2>
+        <img src="../U4/IMAGENES U4/tema8.png" alt="OP">
+        <p>
+            Las redes conmutadas, por otro lado, utilizan interruptores o conmutadores para establecer conexiones entre los procesadores y la memoria compartida. Estas redes ofrecen una mayor escalabilidad y capacidad de comunicación en comparación con las redes de medio compartida.
+        <p>
+            Las redes conmutadas utilizan dispositivos de conmutación para conectar procesadores y memoria, mejorando la escalabilidad y eficiencia.
+        </p>
+      </article>
+      <article id="SMC">
+        <h2>4.4 Sistemas de memoria construida</h2>
+        <img src="../U4/IMAGENES U4/tema9.png" alt="OP">
+        <p>
+            Los sistemas de memoria construida son una forma de organización de la memoria en la computación paralela en la que cada procesador tiene su propia memoria local. Esto permite una mayor independencia entre los procesadores y reduce la necesidad de acceder a una memoria compartida.
+        </p>
+        <p>
+            En sistemas de memoria distribuida, cada procesador tiene su propia memoria local, y los procesadores se comunican entre sí mediante una red interconectada.
+        </p>
+      </article>
+      <article id="CE">
+        <h2>4.5 Casos de estudio</h2>
+        <p>
+            Los casos de estudio ilustran aplicaciones prácticas y sistemas que implementan computación paralela y distribuida. Como por ejemplo: 
+        </p>
+        <h3>Caso 1: Supercomputadora Cray</h3>
+        <p>
+            <li>Descripción: Supercomputadoras como Cray utilizan arquitectura MIMD y sistemas de memoria compartida para realizar cálculos científicos y de ingeniería de alta complejidad.</li>
+            <li>Impacto: Permiten simulaciones avanzadas en áreas como climatología, física de partículas y diseño de fármacos.</li>
+        </p>
+        <h3>Caso 2: Google MapReduce</h3>
+        <p>
+            <li>Descripción: Un modelo de programación y un sistema de procesamiento de datos a gran escala que divide tareas en sub-tareas que se ejecutan en paralelo en una granja de servidores.</li>
+            <li>Impacto: Ha revolucionado el manejo de grandes conjuntos de datos, permitiendo a Google procesar grandes volúmenes de datos de manera eficiente.</li>
+        </p>
+        <h3>Caso 3: Procesamiento en GPUs</h3>
+        <p>
+            <li>Descripción: Las Unidades de Procesamiento Gráfico (GPUs) utilizan arquitectura SIMD para realizar operaciones de procesamiento gráfico y cálculos paralelos en aplicaciones de inteligencia artificial y aprendizaje automático.</li>
+            <li>Impacto: GPUs han acelerado el desarrollo de aplicaciones de inteligencia artificial, permitiendo el entrenamiento de modelos complejos en tiempos mucho más reducidos.
+                Esta revista informativa ofrece una visión completa de los diversos aspectos y tipos de computación paralela, así como de las arquitecturas de memoria utilizadas en sistemas modernos. Con estos conocimientos, podrás comprender mejor cómo se estructuran y optimizan las computadoras para manejar tareas complejas y grandes volúmenes de datos.</li>
+        </p>
+      </article>
+
+      <script src="U4.js"></script>
+      <script>
+        function toggleMenu() {
+          var menu = document.getElementById('sidebar-menu');
+          menu.classList.toggle('collapsed');
+        }
+      </script>
