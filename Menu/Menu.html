@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arquitectura de Computadoras</title>
+  <link rel="stylesheet" href="Menu.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <img src="IMAGENES PARA MENU/tec logo.png" alt="Logo">
+      <ul>
+        <li><a href="Menu.html">Inicio</a></li>
+        <li><a href="../U1/U1.html">Unidad 1</a></li>
+        <li><a href="../U2/U2.html">Unidad 2</a></li>
+        <li><a href="../U3/U3.html">Unidad 3</a></li>
+        <li><a href="../U4/U4.html">Unidad 4</a></li>
+        <li><a href="../PRACTICAS/practicas.html">Practicas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card">
+      <img src="IMAGENES PARA MENU/images.jpg" alt="UNIDAD 1">
+      <div class="card-body">
+        <h5 class="card-title">Unidad 1 "Arquitectura de computadoras"</h5>
+        <p class="card-text">Introducción</p>
+        <p>La arquitectura de computadoras es el diseño conceptual y la estructura operacional fundamental de un sistema de computación. 
+          Este campo abarca el estudio y la descripción de cómo se interconectan y funcionan los diferentes componentes de hardware, 
+          tales como la unidad central de procesamiento (CPU), la memoria, los dispositivos de almacenamiento y los periféricos de entrada y salida. 
+        </p>
+        <a href="../U1/U1.html" class="btn">Ver más</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <img src="IMAGENES PARA MENU/detalle-interior-carcasa-pc-gamer-placa-base-cpu-refrigeracion-agua-memoria-tarjeta-grafica-ventiladores-rgb_176814-1716.avif" alt="UNIDAD 2">
+      <div class="card-body">
+        <h5 class="card-title">Unidad 2 "La CPU (Unidad Central de Procesamiento)"</h5>
+        <p class="card-text">Introducción</p>
+        <p>La unidad central de procesamiento (CPU) es el cerebro de cualquier sistema informático. 
+          Su estructura incluye varios componentes esenciales, como la unidad aritmético-lógica (ALU), la unidad de control, y los registros. 
+        </p>
+        <a href="../U2/U2.html" class="btn">Ver más</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <img src="IMAGENES PARA MENU/primer-plano-y-dentro-de-pc-de-sobremesa-juego-y-refrigeracion-cpu-con-luz-rgb-led-multicolor-muestra-el-estado-en-modo-de-trabajo-carcasa-interior-de-pc-2fk9yfm.jpg" alt="UNIDAD 3">
+      <div class="card-body">
+        <h5 class="card-title">Unidad 3 "La selección de componentes para ensamblar un equipo de computación"</h5>
+        <p class="card-text">Introducción</p>
+        <p>La selección de componentes para ensamblar un equipo de cómputo requiere una comprensión profunda de las especificaciones técnicas y 
+          las compatibilidades entre los distintos elementos.</p>
+        <a href="../U3/U3.html" class="btn">Ver más</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <img src="IMAGENES PARA MENU/descarga.jpeg" alt="UNIDAD 4">
+      <div class="card-body">
+        <h5 class="card-title">Unidad 4 "Aspectos básicos de la computación paralela"</h5>
+        <p class="card-text">Introducción</p>
+        <p>La computación paralela es una metodología que permite la ejecución simultánea de múltiples procesos, 
+          con el objetivo de reducir el tiempo de procesamiento y aumentar la eficiencia. Este enfoque es fundamental en sistemas de alto rendimiento, 
+          como supercomputadoras y servidores de bases de datos.</p>
+        <a href="../U4/U4.html" class="btn">Ver más</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <img src="IMAGENES PARA MENU/closeup-of-cpu-inside-the-personal-computer-photo.jpg" alt="Prácticas">
+      <div class="card-body">
+        <h5 class="card-title">Prácticas de laboratorio</h5>
+        <p class="card-text">Introducción</p>
+        <p>Las prácticas de laboratorio fueron un gran avance para nosotros, principalmente porque ayudo a entender la estructura de una CPU, el funcionamiento 
+          de sus partes y los tipos de elementos que se utilizan.</p>
+        <a href="../PRACTICAS/practicas.html" class="btn">Ver más</a>
+      </div>
+    </section>
+    <!--creador de la página -->
+    <section class="creator">
+      <img src="IMAGENES PARA MENU/la foto.jpg" alt="Creador de la página">
+      <div class="creator-info">
+        <h5 class="creator-title">Creador de la página</h5>
+        <p class="creator-text">Nombre: David Sebastian de La Fuente Monjaras</p>
+        <p>Hola, en esta pagina vamos a explorar el fascinante mundo de la arquitectura de computadoras. 
+          Mi objetivo es que te mantengamos bien informado acerca de este tema, 
+          comprendamos los componentes clave que forman una computadora y cómo estos componentes trabajan juntos para realizar tareas.
+        </p>
+      </div>
+    </section>
+
+    <!--Botón para mostrar el modal -->
+    <button id="modalBtn" class="btn">Para más información</button>
+  </main>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Contacto</h2>
+      <p>Para más información, visita <a href="https://saltillo.tecnm.mx/" target="_blank">"https://saltillo.tecnm.mx/"</a> o llama al 844 288 9460</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <footer>
+    &copy; <span id="year"></span> Arquitectura de computadoras-David Sebastian de la Fuente Monjaras. Todos los derechos reservados.
+</footer>
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+
+
+</body>
+</html>
+ 
